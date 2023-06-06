@@ -41,16 +41,15 @@ def daily_task():
     ''''
     每日执行任务列表
     '''
-    today = str(dt.date.today())
-    
     print('每日数据更新....')
     importlib.reload(updateprodata)
-    updateprodata.update()
+    updateprodata.update('sqlite')
+
+    '''
 
     importlib.reload(redispro2sqlite)
     redispro2sqlite.trans()
     
-    '''
     reload(dailyupdate)
     dailyupdate.start_download()
     
