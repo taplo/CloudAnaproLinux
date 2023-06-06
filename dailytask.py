@@ -42,6 +42,16 @@ def daily_task():
     ''''
     每日执行任务列表
     '''
+    today = str(dt.date.today())
+    
+    print('每日数据更新....')
+    os.system("python updateprodata.py")
+
+    print('上传数据文件....')
+    os.system("python upload.py")
+
+    '''
+
     print('每日数据更新....')
     importlib.reload(updateprodata)
     updateprodata.update('sqlite')
@@ -49,7 +59,6 @@ def daily_task():
     importlib.reload(upload)
     upload.upload_file()
 
-    '''
 
     importlib.reload(redispro2sqlite)
     redispro2sqlite.trans()
