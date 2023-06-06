@@ -7,7 +7,8 @@ A股每日任务列表
 """
 #import newupdate
 import updateprodata
-import redispro2sqlite
+import upload
+#import redispro2sqlite
 
 #import dailyupdate
 #import dailychooseA as da
@@ -44,6 +45,9 @@ def daily_task():
     print('每日数据更新....')
     importlib.reload(updateprodata)
     updateprodata.update('sqlite')
+    
+    importlib.reload(upload)
+    upload.upload_file()
 
     '''
 

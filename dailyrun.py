@@ -72,10 +72,10 @@ def run():
     if cal.loc[str(pd.Timestamp.today().date()), 'is_open']:
         importlib.reload(dailytask)
         dailytask.daily_task()
-        print('下次任务将于明日17:30执行！')
+        print('下次任务将于明日17:45执行！')
         print('本次任务结束时间：%s' % str(pd.Timestamp.today()))
     else:
-        print('今日未开盘，任务结束。下次将于明日17:30分执行。')
+        print('今日未开盘，任务结束。下次将于明日17:45分执行。')
         print('本次任务结束时间：%s' % str(pd.Timestamp.today()))
 
     print('==========================================================')
@@ -86,9 +86,9 @@ if __name__ == '__main__':
 
     scheduler = BlockingScheduler()
     #scheduler.add_job(run, 'cron', day_of_week='0-4', hour='21', minute='30')
-    scheduler.add_job(run, 'cron', hour='17', minute='30')
+    scheduler.add_job(run, 'cron', hour='17', minute='45')
     print('程序启动！启动时间：%s' % str(pd.Timestamp.today()))
-    print('系列程序将于每日17:30分自动开始运行，只在开盘日执行下载和选股。。。请等待。。。')
+    print('系列程序将于每日17:45分自动开始运行，只在开盘日执行下载和选股。。。请等待。。。')
     '''
         year (int|str) – 4-digit year
         month (int|str) – month (1-12)
