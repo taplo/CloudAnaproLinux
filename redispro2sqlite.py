@@ -10,7 +10,7 @@ import pandas as pd
 import sys
 import pprint
 #from wttools.sqlite2kv import ConnectionPool, StrictRedis
-from wtd.tools.sqlite2kv import ConnectionPool, StrictRedis
+from sqlite2kv import ConnectionPool, StrictRedis
 
 
 def trans_string(name, r, lr):
