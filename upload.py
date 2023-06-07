@@ -17,6 +17,7 @@ def upload_file():
     
     # 按照日期复制文件
     filename = datetime.datetime.now().isoformat().split('.')[0] + '.db'
+    filename = filename.replace(':', '-')
     cmd = "copy /workdir/default.db /workdir/" + filename
     result = os.system(cmd)
     print(result)
