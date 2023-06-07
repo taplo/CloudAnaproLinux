@@ -4,7 +4,7 @@ Created on Mon Dec 18 22:04:28 2017
 A股每日任务文件
 @author: 韬
 """
-import win32api
+#import win32api
 import _thread
 import dailytask
 import os
@@ -25,7 +25,7 @@ h = logging.StreamHandler()
 h.setFormatter(fmt)
 log.addHandler(h)
 
-
+'''
 # 处理Ctrl+C时发生的“forrtl: error (200): program aborting due to control-C event”错误事件
 
 # Now set our handler for CTRL_C_EVENT. Other control event
@@ -40,7 +40,7 @@ def handler(dwCtrlType, hook_sigint=_thread.interrupt_main):
 
 win32api.SetConsoleCtrlHandler(handler, 1)
 # 处理Ctrl+C时发生的“forrtl: error (200): program aborting due to control-C event”错误事件
-
+'''
 
 def get_china_calendar():
     '''
