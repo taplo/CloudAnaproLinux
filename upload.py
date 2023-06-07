@@ -18,12 +18,12 @@ def upload_file():
     # 按照日期复制文件
     filename = datetime.datetime.now().isoformat().split('.')[0] + '.db'
     filename = filename.replace(':', '-')
-    cmd = "copy /workdir/default.db /workdir/" + filename
+    cmd = "cp /workdir/default.db /workdir/" + filename
     result = os.system(cmd)
     print(result)
     result = ali.upload_file(file_path='/workdir/'+filename, parent_file_id=remote_folder.file_id)
     print(result)
-    result = os.system("del /workdir/" + filename)
+    result = os.system("rm /workdir/" + filename)
     print(result)
 if __name__ == '__main__':
 
