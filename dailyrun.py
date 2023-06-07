@@ -10,7 +10,7 @@ import dailytask
 import os
 from apscheduler.schedulers.blocking import BlockingScheduler
 #import anadata as ana
-from anapro import anapro
+from anapro import Anapro
 import tushare as ts
 import pandas as pd
 
@@ -63,7 +63,7 @@ def run():
     执行命令的函数
     '''
     #cal = get_china_calendar()
-    ana = anapro()
+    ana = Anapro()
     #cal = ana.get_china_calendar()
     cal = ana.get_calendar()
 
