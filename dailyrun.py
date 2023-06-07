@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
     scheduler = BlockingScheduler()
     #scheduler.add_job(run, 'cron', day_of_week='0-4', hour='21', minute='30')
-    scheduler.add_job(run, 'cron', hour='17', minute='45')
+    scheduler.add_job(run, 'cron', hour='17', minute='45', timezone='Asia/Shanghai')
     print('程序启动！启动时间：%s' % str(pd.Timestamp.today()))
     print('系列程序将于每日17:45分自动开始运行，只在开盘日执行下载和选股。。。请等待。。。')
     '''
