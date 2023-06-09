@@ -63,7 +63,7 @@ def run():
     执行命令的函数
     '''
     #cal = get_china_calendar()
-    ana = Anapro()
+    ana = Anapro(path='/workdir/default.db')
     #cal = ana.get_china_calendar()
     cal = ana.get_calendar()
 
