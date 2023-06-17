@@ -50,6 +50,9 @@ def daily_task():
     print('上传数据文件....')
     os.system("python upload.py")
 
+    print('更新数据到redis server！')
+    os.system("python sqlite2redis.py")
+
     '''
 
     print('每日数据更新....')
