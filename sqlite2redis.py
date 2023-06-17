@@ -7,7 +7,7 @@
 
 import sqlite3
 import redis
-
+import configparser
 
 def trans_string(c, r):
     '''
@@ -40,10 +40,17 @@ def trans_hash(c, r):
     print('已转换 %d 条hash类型数据。'%count)
 
 def trans():
+    conf = configparser.ConfigParser()
+    conf.read('../config.ini',encoding="utf-8-sig")
+    host = conf.get('redis', 'host')
+    port = conf.get('redis', 'port')
+    password = conf.get('redis', 'pass')
+
+
     print('开始转换...')
     sq = sqlite3.connect('/workdir/default.db')
     c = sq.cursor()
-    pool = redis.ConnectionPool(host='MyRedis')
+    pool = redis.ConnectionPool(host=host, port=port, password=password)
     r = redis.StrictRedis(connection_pool=pool)
     
     trans_string(c, r)
