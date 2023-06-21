@@ -44,7 +44,10 @@ def trans():
     conf.read('../config.ini',encoding="utf-8-sig")
     host = conf.get('redis', 'host')
     port = conf.get('redis', 'port')
-    password = conf.get('redis', 'pass')
+    try:
+        password = conf.get('redis', 'pass')
+    except:
+        password = ""
 
 
     print('开始转换...')
