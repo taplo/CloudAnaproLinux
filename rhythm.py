@@ -120,7 +120,7 @@ class Rhythm():
                 exit()
             if self.__thread.is_alive():
                 self.__q.put(False)
-                sleep(2 * self.__delay)
+                sleep(2 * self.__sleep)
                 del self.__thread
             else:
                 del self.__thread        
